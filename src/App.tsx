@@ -14,7 +14,7 @@ const App = () => {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/PMT-X">
+          {/* <Route path="/PMT-X"> */}
             <Route index element={<Navigate to="login" />} />
             <Route path="login" element={<Login />} />
             <Route element={<Header />}>
@@ -25,7 +25,7 @@ const App = () => {
               <Route path="manager" element={<ManagerPage />} />
               </Route>
             </Route>
-          </Route>
+          {/* </Route> */}
         </Routes>
       </BrowserRouter>
       <ToastContainer />
