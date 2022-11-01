@@ -25,10 +25,10 @@ const Login = (props: Props) => {
       sessionStorage.setItem('name', response.data.name);
 
       if(response.data.type.toUpperCase() === 'EMP'){
-        navigate('/PMT-X/employee');
+        navigate('/employee');
       }
       else{
-        navigate('/PMT-X/manager');
+        navigate('/manager');
       }
     })
     .catch((error)=>{
