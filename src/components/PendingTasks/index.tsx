@@ -27,7 +27,7 @@ const PendingTasks = ({
   const token = sessionStorage.getItem("token");
 
   const changeStatus = (taskId: number) => {
-    axios.put(`/tasks/${taskId}`,{}, {headers: {"authorization" : token}})
+    axios.put(`${process.env.REACT_APP_API_URL}/tasks/${taskId}`,{}, {headers: {"authorization" : token}})
       .then((res) => {
         getPendingTasks();
         getCompletedTasks();

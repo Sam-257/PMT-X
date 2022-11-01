@@ -25,7 +25,7 @@ const AddForm = (props: Props) => {
   
   const addNewTask = () => {
     axios
-      .post(`/tasks/add`, addFormData, {
+      .post(`${process.env.REACT_APP_API_URL}/tasks/add`, addFormData, {
         headers: {
           authorization: token,
         },
