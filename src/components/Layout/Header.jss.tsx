@@ -1,7 +1,7 @@
 import { createUseStyles } from "react-jss";
 import { blueBird } from "../../theme";
 
-const { light, primary, muted, secondary, dark } = blueBird;
+const { light, primary, muted, secondary } = blueBird;
 const classes = createUseStyles({
   navbar: {
     width:"100%",
