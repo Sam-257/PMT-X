@@ -13,7 +13,7 @@ const Header = (props: Props) => {
     sessionStorage.removeItem('name');
     sessionStorage.removeItem('id');
     sessionStorage.removeItem('role');
-    navigate('/PMT-X');
+    navigate('/');
   }
 
   return (
