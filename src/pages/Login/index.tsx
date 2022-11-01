@@ -16,7 +16,7 @@ const Login = (props: Props) => {
   const styles = classes();
   
   const userAPI =()=>{
-    axios.get(`${process.env.REACT_APP_API_URL}/me`, {headers: {
+    axios.get('/me', {headers: {
       'authorization': sessionStorage.getItem('token')
     }})
     .then((response)=>{
@@ -38,7 +38,7 @@ const Login = (props: Props) => {
 
   const loginAPI = () => {
     axios
-      .post(`${process.env.REACT_APP_API_URL}/signin`, loginForm, {
+      .post(`/signin`, loginForm, {
         headers: {
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Methods": "POST",
