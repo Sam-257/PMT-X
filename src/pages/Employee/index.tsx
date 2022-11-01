@@ -22,7 +22,7 @@ const Employee = (props: Props) => {
 
   const getPendingTasks = () => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/tasks/pending/${employeeId}`, {
+      .get(`/tasks/pending/${employeeId}`, {
         headers: {
           authorization: token,
         },
@@ -38,7 +38,7 @@ const Employee = (props: Props) => {
 
   const getCompletedTasks = () => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/tasks/completed/${employeeId}`, {
+      .get(`/tasks/completed/${employeeId}`, {
         headers: {
           authorization: token,
         },

@@ -26,7 +26,7 @@ export default function ManagerPage() {
 
   const getTeamData = () => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/teams/employees`, {
+      .get(`/teams/employees`, {
         headers: {
           authorization: token,
         },
