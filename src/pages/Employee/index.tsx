@@ -55,7 +55,9 @@ const Employee = (props: Props) => {
   useEffect(() => {
     getPendingTasks();
     getCompletedTasks();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <div className={styles.container}>
       <div className={styles.cardContainer}>

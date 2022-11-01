@@ -26,7 +26,7 @@ export default function ManagerPage() {
 
   const getTeamData = () => {
     axios
-      .get(`/teams/employees`, {
+      .get(`${process.env.REACT_APP_API_URL}/teams/employees`, {
         headers: {
           authorization: token,
         },
@@ -41,6 +41,7 @@ export default function ManagerPage() {
 
   useEffect(() => {
     getTeamData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
