@@ -6,14 +6,10 @@ import { useEffect } from "react";
 import axios from "axios";
 
 type ITeamMember = {
-  id: number;
-  name: string;
-  email: string;
-  password?: string;
-  role?: string;
-  image?: string;
-  pending?: number;
-  completed?: number;
+  userId: number;
+  userName: string;
+  noOfPendingtask: number;
+  noOfCompletedTask: number;
 };
 
 export default function ManagerPage() {
@@ -77,7 +73,7 @@ export default function ManagerPage() {
         <div className={styles.employeeCardContainer}>
           {teamData
             ? teamData?.map((item) => (
-                <div key={item.id} className={styles["flip-card"]}>
+                <div key={item.userId} className={styles["flip-card"]}>
                   <div className={styles["flip-card-inner"]}>
                     <div className={styles["flip-card-front"]}>
                       <CardFront employeeData={item} />

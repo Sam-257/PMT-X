@@ -3,14 +3,10 @@ import classes from "./CardBack.jss";
 
 type Props = {
   employeeData: {
-    id: number;
-    name: string;
-    email: string;
-    password?: string;
-    role?: string;
-    image?: string;
-    pending?: number;
-    completed?: number;
+    userId: number;
+    userName: string;
+    noOfPendingtask: number;
+    noOfCompletedTask: number;
   };
 };
 
@@ -22,29 +18,25 @@ export default function CardBack({ employeeData }: Props) {
         <div className={styles.flex2}>
           <div className={styles.parent}>
             <p id="num">
-              {/* {employeeData.completed}/{employeeData.pending + employeeData.completed} */}
-              2/100
+              {employeeData.noOfCompletedTask}/{employeeData.noOfPendingtask + employeeData.noOfCompletedTask}
+              
             </p>
             <p id="txt">Completed</p>
           </div>
           <div className={styles.parent}>
             <p id="num">
-              {/* {employeeData.pending}/{employeeData.pending + employeeData.completed} */}
-              1/100
+              {employeeData.noOfPendingtask}/{employeeData.noOfPendingtask + employeeData.noOfCompletedTask}
             </p>
             <p id="txt">In Progress</p>
           </div>
         </div>
         <div>
           <progress
-            // value={employeeData.completed}
-            // max={employeeData.pending + employeeData.completed}
-            value={10}
-            max={100}
-          ></progress>
+            value={employeeData.noOfCompletedTask}
+            max={employeeData.noOfPendingtask + employeeData.noOfCompletedTask}
+            ></progress>
           <span className={styles.progressvalue}>
-            {/* {(employeeData.completed / (employeeData.completed + employeeData.pending))*100}% */}
-            10%
+            {(employeeData.noOfCompletedTask + employeeData.noOfPendingtask) ===0 ? 0 :(employeeData.noOfCompletedTask / (employeeData.noOfCompletedTask + employeeData.noOfPendingtask))*100}%
           </span>
           <p>Performance</p>
         </div>

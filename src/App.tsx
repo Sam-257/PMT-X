@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 import Header from "./components/Layout/Header";
 import Employee from "./pages/Employee";
 import Login from "./pages/Login";

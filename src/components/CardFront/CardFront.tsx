@@ -3,14 +3,10 @@ import classes from "./CardFront.jss";
 
 type Props = {
   employeeData: {
-    id: number;
-    name: string;
-    email: string;
-    password?: string;
-    role?: string;
-    image?: string;
-    pending?: number;
-    completed?: number;
+    userId: number;
+    userName: string;
+    noOfPendingtask: number;
+    noOfCompletedTask: number;
   };
 };
 
@@ -23,8 +19,8 @@ export default function CardFront({ employeeData }: Props) {
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDGQO5-8CPA9Hzl5_wLkAf6VtlMw52q7IwRw&usqp=CAU"
         alt="employee-profile"
       ></img>
-      <div>Employee ID: {employeeData.id}</div>
-      <div>Employee Name: {employeeData.name}</div>
+      <div>Employee ID: {employeeData.userId}</div>
+      <div>Employee Name: {employeeData.userName}</div>
     </>
   );
 }

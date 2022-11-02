@@ -71,7 +71,8 @@ const classes = createUseStyles({
   employeeCardContainer: {
     display: "flex",
     flexWrap: "wrap",
-    justifyContent: "space-between",
+    justifyContent: "center",
+    alignItems:'stretch',
   },
   "flip-card-front": {
     position: "absolute",
