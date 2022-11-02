@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CardBack from "../../components/CardBack/CardBack";
+import CardBack from "../../components/CardBack";
 import CardFront from "../../components/CardFront/CardFront";
 import classes from "./index.jss";
 import { useEffect } from "react";

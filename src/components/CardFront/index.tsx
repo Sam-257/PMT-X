@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./CardFront.jss";
+import classes from "./index.jss";
 
 type Props = {
   employeeData: {

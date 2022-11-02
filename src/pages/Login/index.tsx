@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import classes from "./Login.jss";
+import classes from "./index.jss";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
