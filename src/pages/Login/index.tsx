@@ -13,30 +13,38 @@ const Login = (props: Props) => {
     email: "",
     password: "",
   });
+  const [showPassword, setShowPassword] = useState(false);
   const styles = classes();
-  
-  const userAPI =()=>{
-    axios.get(`${process.env.REACT_APP_API_URL}/me`, {headers: {
-      'authorization': sessionStorage.getItem('token')
-    }})
-    .then((response)=>{
-      sessionStorage.setItem('role', response.data.type);
-      sessionStorage.setItem('id', response.data.id);
-      sessionStorage.setItem('name', response.data.name);
 
-      if(response.data.type.toUpperCase() === 'EMP'){
-        navigate('/employee');
-      }
-      else{
-        navigate('/manager');
-      }
-    })
-    .catch((error)=>{
-      console.log(error)
-    })
-  }
+  const userAPI = () => {
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/me`, {
+        headers: {
+          authorization: sessionStorage.getItem("token"),
+        },
+      })
+      .then((response) => {
+        sessionStorage.setItem("role", response.data.type);
+        sessionStorage.setItem("id", response.data.id);
+        sessionStorage.setItem("name", response.data.name);
+
+        if (response.data.type.toUpperCase() === "EMP") {
+          navigate("/employee");
+        } else {
+          navigate("/manager");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const loginAPI = () => {
+    if(loginForm.email === "" || loginForm.password === ""){
+      if(loginForm.email === "") setLoginErrors(prevErrors => {return {...prevErrors, email: 'email is required.'}})
+      if(loginForm.password === "") setLoginErrors(prevErrors => {return {...prevErrors, password: 'password is required.'}})
+      return;
+    }
     axios
       .post(`${process.env.REACT_APP_API_URL}/signin`, loginForm, {
         headers: {
@@ -45,12 +53,16 @@ const Login = (props: Props) => {
         },
       })
       .then((response) => {
-        toast.success("Logged In Successfully");
-        sessionStorage.setItem('token', response.data);
+        toast.success("Logged In Successfully", {
+          toastId: "success",
+        });
+        sessionStorage.setItem("token", response.data);
         userAPI();
       })
       .catch((error) => {
-        toast.error("Incorrect credentials");
+        toast.error("Incorrect credentials", {
+          toastId: "failure",
+        });
       });
   };
 
@@ -71,27 +83,34 @@ const Login = (props: Props) => {
           <p className={styles.logo}>PMT-X</p>
         </div>
         <div className={styles.form}>
-          <label htmlFor="email">Email: </label>
+          <label htmlFor="email">Email</label>
           <input
             type="text"
             id="email"
             placeholder="Enter your Email"
             onChange={handleChange}
+            value={loginForm.email}
           />
           <span>{loginErrors.email}</span>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="Enter your Password"
-            onChange={handleChange}
-          />
+          <label htmlFor="password">Password</label>
+          <div className={styles.passwordWrapper}>
+            <input
+              type={showPassword ? "text" : "password"}
+              id="password"
+              placeholder="Enter your Password"
+              onChange={handleChange}
+              value={loginForm.password}
+            />
+            {showPassword ? 
+              <div className={styles.showPassword} onClick={() => setShowPassword(!showPassword)}><i className="fa fa-eye" /></div> : 
+              <div className={styles.showPassword} onClick={() => setShowPassword(!showPassword)}><i className="fa fa-eye-slash" /></div>
+          }
+          
+            
+          </div>
           <span>{loginErrors.password}</span>
           <div className={styles.buttonWrapper}>
-            <button onClick={loginAPI}>
-              {" "}
-              Login{" "}
-            </button>
+            <button onClick={loginAPI}>Login</button>
           </div>
         </div>
       </div>

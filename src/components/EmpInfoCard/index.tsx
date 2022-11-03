@@ -23,7 +23,7 @@ const EmpInfoCard = ({ showAddForm, setShowAddForm, numOfPending, numOfCompleted
           <p>Hi, {sessionStorage.getItem('name')}</p>
         </div>
         <div className={styles.performance}>
-          <progress value={numOfCompleted} max={numOfPending + numOfCompleted} /><span className={styles.progressvalue}>{(numOfCompleted + numOfPending)!== 0 ?((numOfCompleted/ (numOfPending + numOfCompleted))* 100).toFixed(2) : 0}%</span>
+          <progress value={numOfCompleted} max={numOfPending + numOfCompleted} /><span className={styles.progressvalue}>{(numOfCompleted + numOfPending)!== 0 ? Math.round((numOfCompleted/ (numOfPending + numOfCompleted))* 100) : 0}%</span>
           <p>Your Performance</p>
         </div>
         <div className={styles.addTask}>

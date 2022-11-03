@@ -43,6 +43,7 @@ const classes = createUseStyles({
     fontWeight: 700,
     fontSize: "1em",
     borderRadius: "5px",
+    cursor: 'pointer',
     "&:hover": {
       backgroundColor: `${primary}ff`,
     },

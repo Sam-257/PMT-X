@@ -73,13 +73,12 @@ const classes = createUseStyles({
     "& button": {
       width: "30%",
       height: "auto",
-      padding: "10px 15px",
       backgroundColor: `${primary}dd`,
       color: light,
       border: "none",
       borderRadius: "5px",
       fontSize: "18px",
-      fontWeight: 700,
+      fontWeight: 600,
       "&:hover": {
         backgroundColor: `${primary}ef`,
         cursor: "pointer",
@@ -89,17 +88,29 @@ const classes = createUseStyles({
   buttonWrapper: {
     height: "41px",
     display: "flex",
+    marginTop: "25px",
     transform: "0.3s ease-out",
     justifyContent: "center",
-    '& button': {
-      padding: '0'
-    }
   },
   runButton: {
     transition: "0.4s",
     "&:hover": {
       transform: "translateX(-100%)",
     },
+  },
+  passwordWrapper:{
+    position: 'relative',
+    '& input': {
+      width: '100%',
+    }
+  },
+  showPassword:{
+    position: "absolute",
+    right: '1.2em',
+    top: "1.1em",
+
+    fontSize: "1.3em",
+    cursor: 'pointer',
   },
 });
 

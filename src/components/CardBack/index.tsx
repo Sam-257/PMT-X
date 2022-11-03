@@ -36,7 +36,7 @@ export default function CardBack({ employeeData }: Props) {
             max={employeeData.noOfPendingtask + employeeData.noOfCompletedTask}
             ></progress>
           <span className={styles.progressvalue}>
-            {(employeeData.noOfCompletedTask + employeeData.noOfPendingtask) ===0 ? 0 :(employeeData.noOfCompletedTask / (employeeData.noOfCompletedTask + employeeData.noOfPendingtask))*100}%
+            {(employeeData.noOfCompletedTask + employeeData.noOfPendingtask) ===0 ? 0 :Math.round((employeeData.noOfCompletedTask / (employeeData.noOfCompletedTask + employeeData.noOfPendingtask))*100)}%
           </span>
           <p>Performance</p>
         </div>

@@ -1,20 +1,22 @@
 import { createUseStyles } from "react-jss";
 import { blueBird } from "../../theme";
 
-const { light, dark } = blueBird;
+const { light, dark, secondary } = blueBird;
 const classes = createUseStyles({
   form: {
     height: "100%",
     display: "flex",
-    alignItems: "center",
+    alignItems: "flex-start",
     justifyContent: "center",
     fontSize: "1.1em",
     "& div": {
-      margin: "45px",
+      margin: "35px 45px 15px 45px",
       color: dark,
+      display:"flex",
+      alignItems: "baseline",
       "& input": {
         padding: "7px 15px",
-        border: "none",
+        border: `1px solid ${secondary}`,
         borderRadius: "5px",
         marginLeft: "5px",
         "&:hover": {
@@ -23,6 +25,13 @@ const classes = createUseStyles({
         "&:focus-visible": {
           outline: `1px solid ${dark}`,
         },
+      },
+      "& span": {
+        minHeight: "25px",
+        fontSize: "15px",
+        color: "#FF7F7F",
+        fontWeight: 600,
+        margin: "5px 0 0 0"
       },
       "& button": {
         height: "auto",
@@ -42,11 +51,16 @@ const classes = createUseStyles({
       },
     },
   },
+  inputWrapper:{
+    display: 'flex',
+    flexDirection: 'column',
+    margin: "0 0 0 5px !important",
+  },
   addTask: {
     marginRight: "0 !important",
   },
   closeTask: {
-    margin: "0 0 0 1em !important",
+    margin: "2.3em 0 0 1.5em !important",
     "& img": {
       "&:hover": {
         cursor: "pointer",

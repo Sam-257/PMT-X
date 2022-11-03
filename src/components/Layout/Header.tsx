@@ -1,5 +1,6 @@
 import React from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import classes from './Header.jss'
 
 type Props = {}
@@ -13,6 +14,7 @@ const Header = (props: Props) => {
     sessionStorage.removeItem('name');
     sessionStorage.removeItem('id');
     sessionStorage.removeItem('role');
+    toast.info('Logged Out successfully')
     navigate('/');
   }
 

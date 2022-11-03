@@ -12,7 +12,7 @@ const classes = createUseStyles({
     flex: "30%",
     display: "flex",
     justifyContent: "space-around",
-    margin: "50px",
+    margin: "50px 50px 20px 50px",
     color: dark,
   },
   form: {
@@ -22,7 +22,7 @@ const classes = createUseStyles({
   tasks: {
     minHeight: "500px",
     flex: "50%",
-    padding: "80px",
+    padding: "40px 80px 80px 80px",
   },
   tabs: {
     fontSize: "1.1em",

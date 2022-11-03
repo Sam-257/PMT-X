@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CardBack from "../../components/CardBack";
-import CardFront from "../../components/CardFront/CardFront";
+import CardFront from "../../components/CardFront";
 import classes from "./index.jss";
 import { useEffect } from "react";
 import axios from "axios";
