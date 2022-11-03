@@ -55,8 +55,8 @@ const AddForm = (props: Props) => {
         toast.success("Task Added", {
           toastId: "success",
         });
-        // props.getPendingTasks();
-        // props.getCompletedTasks();
+        props.getPendingTasks();
+        props.getCompletedTasks();
       })
       .catch((error) => {
         console.log(error);
