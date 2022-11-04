@@ -40,9 +40,15 @@ const Login = (props: Props) => {
   };
 
   const loginAPI = () => {
-    if(loginForm.email === "" || loginForm.password === ""){
-      if(loginForm.email === "") setLoginErrors(prevErrors => {return {...prevErrors, email: 'email is required.'}})
-      if(loginForm.password === "") setLoginErrors(prevErrors => {return {...prevErrors, password: 'password is required.'}})
+    if (loginForm.email === "" || loginForm.password === "") {
+      if (loginForm.email === "")
+        setLoginErrors((prevErrors) => {
+          return { ...prevErrors, email: "Email is required." };
+        });
+      if (loginForm.password === "")
+        setLoginErrors((prevErrors) => {
+          return { ...prevErrors, password: "Password is required." };
+        });
       return;
     }
     axios
@@ -69,10 +75,15 @@ const Login = (props: Props) => {
   const handleChange = (e: any) => {
     setLoginForm({ ...loginForm, [e.target.id]: e.target.value });
     e.target.value === ""
-      ? setLoginErrors({
-          ...loginErrors,
-          [e.target.id]: `${e.target.id} is required.`,
-        })
+      ? e.target.id === "email"
+        ? setLoginErrors({
+            ...loginErrors,
+            [e.target.id]: `Email is required.`,
+          })
+        : setLoginErrors({
+            ...loginErrors,
+            [e.target.id]: `Password is required.`,
+          })
       : setLoginErrors({ ...loginErrors, [e.target.id]: "" });
   };
 
@@ -101,12 +112,21 @@ const Login = (props: Props) => {
               onChange={handleChange}
               value={loginForm.password}
             />
-            {showPassword ? 
-              <div className={styles.showPassword} onClick={() => setShowPassword(!showPassword)}><i className="fa fa-eye" /></div> : 
-              <div className={styles.showPassword} onClick={() => setShowPassword(!showPassword)}><i className="fa fa-eye-slash" /></div>
-          }
-          
-            
+            {showPassword ? (
+              <div
+                className={styles.showPassword}
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                <i className="fa fa-eye" />
+              </div>
+            ) : (
+              <div
+                className={styles.showPassword}
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                <i className="fa fa-eye-slash" />
+              </div>
+            )}
           </div>
           <span>{loginErrors.password}</span>
           <div className={styles.buttonWrapper}>
