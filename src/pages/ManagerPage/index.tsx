@@ -48,7 +48,7 @@ export default function ManagerPage() {
             <div className={styles.content}>
               <div className={styles.profile}>
                 <img
-                  src="https://icons.veryicon.com/png/o/miscellaneous/management-system-icon-library/person-15.png"
+                  src={require('./person.png')}
                   alt="Profile"
                   height={30}
                   width={30}
@@ -58,7 +58,7 @@ export default function ManagerPage() {
               <div className={styles.profile}>
                 <img
                   id="groupIcon"
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNyGfUyNVGSmiYJKOHNr-VpBXr33B99GFCZA&usqp=CAU"
+                  src={require('./team.png')}
                   alt="Profile"
                 />
                 <p>My Team</p>

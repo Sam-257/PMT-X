@@ -15,7 +15,7 @@ const EmpInfoCard = ({ showAddForm, setShowAddForm, numOfPending, numOfCompleted
       <div className={styles.content}>
         <div className={styles.profile}>
           <img
-            src="https://icons.veryicon.com/png/o/miscellaneous/management-system-icon-library/person-15.png"
+            src={require('./person.png')}
             alt="Profile"
             height={30}
             width={30}

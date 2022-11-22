@@ -16,7 +16,7 @@ export default function CardFront({ employeeData }: Props) {
     <>
       <img
         className={styles["card-img"]}
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDGQO5-8CPA9Hzl5_wLkAf6VtlMw52q7IwRw&usqp=CAU"
+        src={require('./profile.png')}
         alt="employee-profile"
       ></img>
       <div>Employee ID: {employeeData.userId}</div>
