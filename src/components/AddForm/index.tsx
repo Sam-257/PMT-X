@@ -97,7 +97,7 @@ const AddForm = (props: Props) => {
       <div className={styles.closeTask}>
         <img
           onClick={() => props.setShowAddForm(false)}
-          src="https://cdn.icon-icons.com/icons2/2550/PNG/512/x_circle_icon_152490.png"
+          src={require('./cross.png')}
           alt="cross"
           width={32}
           height={32}
