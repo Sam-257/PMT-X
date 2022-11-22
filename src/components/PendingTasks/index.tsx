@@ -9,7 +9,7 @@ type Task = {
   taskName: string;
   description: string;
   taskId: number;
-  status: boolean;
+  status: string;
 };
 
 type Props = {
@@ -38,7 +38,7 @@ const PendingTasks = ({
   return (
     <Collapse>
       {taskData
-        .filter((item) => !item.status)
+        .filter((item) => item.status==='PENDING')
         .map((item, index) => (
           <Panel header={item.taskName} key={item.taskId}>
             <div className={styles.accordionContent}>

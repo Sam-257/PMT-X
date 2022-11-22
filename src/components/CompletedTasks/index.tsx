@@ -6,7 +6,7 @@ type Task = {
   taskName: string,
   description: string,
   taskId: number,
-  status: boolean
+  status: string
 }
 
 type Props ={
@@ -18,7 +18,7 @@ const CompletedTasks = ({taskData}: Props) => {
   return (
     <div className={styles.completedTaskContainer}>
       {taskData
-        .filter((item) => item.status)
+        .filter((item) => item.status === 'COMPLETED')
         .map((item) => (
           <EmpTaskCard name={item.taskName} desc={item.description} key={item.taskId} />
         ))}

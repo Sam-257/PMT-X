@@ -27,6 +27,7 @@ const Login = (props: Props) => {
         sessionStorage.setItem("role", response.data.type);
         sessionStorage.setItem("id", response.data.id);
         sessionStorage.setItem("name", response.data.name);
+        sessionStorage.setItem("teamId", response.data.teamId);
 
         if (response.data.type.toUpperCase() === "EMP") {
           navigate("/employee");

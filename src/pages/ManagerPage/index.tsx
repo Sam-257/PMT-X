@@ -22,7 +22,7 @@ export default function ManagerPage() {
 
   const getTeamData = () => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/teams/employees`, {
+      .get(`${process.env.REACT_APP_API_URL}/teams/employees/${sessionStorage.getItem('teamId')}`, {
         headers: {
           authorization: token,
         },
